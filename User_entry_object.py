@@ -55,6 +55,3 @@ Notes: {self.__notes}
     
     #------------------------------------
 
-
-entry = User_entry(2, True, False, "Test")
-print(entry)
