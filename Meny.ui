@@ -129,7 +129,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Registrera</string>
+             <string>Register</string>
             </property>
            </widget>
           </item>
@@ -161,7 +161,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Statistik</string>
+             <string>Statistics</string>
             </property>
            </widget>
           </item>
