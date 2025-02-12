@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#AAmjad
-=======
-#Besart was here
->>>>>>> 835f1bcedbec93b8a257ac1f8ebbfdbffb200529
+
 
 class User_entry:
 
