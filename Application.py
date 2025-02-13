@@ -13,7 +13,6 @@ def Runtime():
     menu = Menu_window(widget)
     register = Register_window(widget)
     statistics = Statistics_window(widget)
-    Registration_form = Registration_form_window(widget)
     
     widget.addWidget(menu)
     widget.addWidget(register)

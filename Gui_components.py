@@ -38,20 +38,28 @@ class Register_window(QMainWindow, Ui_register_window):
     
     def setupButtons(self, qWidget):
         self.register_button_back.clicked.connect(lambda: self.register_menu_press_back(qWidget))
+        self.calendarWidget.clicked.connect(lambda: self.register_calendar_widget_pressed())
 
     def register_menu_press_back(self, qWidget):
         qWidget.setCurrentIndex(0)
 
+    def register_calendar_widget_pressed(self):
+        Registration_form = Registration_form_window()
+        Registration_form.exec()
+
 #Fönster för registrering, med frågor och anteckningar
 class Registration_form_window(QDialog, Ui_registration_form):
     #Konstruktören, detta körs när ett nytt objekt initieras
-    def __init__(self, qWidget):
+    def __init__(self):
         super(Registration_form_window, self).__init__()
         self.setupUi(self) #Funktion som finns i Registration_form.py, lägger till alla komponenter (knapp, text osv)
-        self.setupButtons(qWidget) #Funktion som kopplar knapparna, finns nedan
+        self.setupButtons() #Funktion som kopplar knapparna, finns nedan
     
-    def setupButtons(self, qWidget):
-        pass
+    def setupButtons(self):
+        self.registration_form_button_save.clicked.connect(lambda: self.registration_form_button_press_save())
+
+    def registration_form_button_press_save(self):
+        self.reject()
 
 #Fönster för statistik#Funktion som kopplar knapparna
 class Statistics_window(QMainWindow, Ui_statistics_window):
