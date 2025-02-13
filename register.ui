@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>register_window</class>
+ <widget class="QMainWindow" name="register_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>463</width>
-    <height>368</height>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Register</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -20,7 +20,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="register_button_back">
           <property name="font">
            <font>
             <family>Segoe UI Variable Display Semib</family>
@@ -108,7 +108,7 @@
      <x>0</x>
      <y>0</y>
      <width>463</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

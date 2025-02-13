@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>statistics_window</class>
+ <widget class="QMainWindow" name="statistics_window">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -20,7 +20,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="statistics_button_back">
           <property name="font">
            <font>
             <family>Segoe UI Variable Display Semib</family>
@@ -97,7 +97,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="statistics_label">
             <property name="font">
              <font>
               <family>Segoe UI Variable Display Semib</family>
