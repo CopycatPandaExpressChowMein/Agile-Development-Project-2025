@@ -45,6 +45,7 @@ class Register_window(QMainWindow, Ui_register_window):
 
     def register_calendar_widget_pressed(self):
         Registration_form = Registration_form_window()
+        Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + self.calendarWidget.selectedDate().toString() + "]")
         Registration_form.exec()
 
 #Fönster för registrering, med frågor och anteckningar
