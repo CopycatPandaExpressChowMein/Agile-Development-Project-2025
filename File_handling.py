@@ -1,8 +1,6 @@
 import pickle
 
 
-
-
 def save_file(data, filepath, filename):
     with open(filepath + "/" + filename, 'w') as file:
         file.write(data)
