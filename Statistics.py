@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(803, 828)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_statistics_window(object):
+    def setupUi(self, statistics_window):
+        statistics_window.setObjectName("statistics_window")
+        statistics_window.resize(803, 828)
+        self.centralwidget = QtWidgets.QWidget(statistics_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
@@ -23,15 +23,15 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.statistics_button_back = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display Semib")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout.addWidget(self.pushButton)
+        self.statistics_button_back.setFont(font)
+        self.statistics_button_back.setObjectName("statistics_button_back")
+        self.horizontalLayout.addWidget(self.statistics_button_back)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem)
         self.verticalLayout.addLayout(self.horizontalLayout)
@@ -48,14 +48,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem3)
-        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.statistics_label = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display Semib")
         font.setPointSize(40)
-        self.label.setFont(font)
-        self.label.setWordWrap(False)
-        self.label.setObjectName("label")
-        self.horizontalLayout_2.addWidget(self.label)
+        self.statistics_label.setFont(font)
+        self.statistics_label.setWordWrap(False)
+        self.statistics_label.setObjectName("statistics_label")
+        self.horizontalLayout_2.addWidget(self.statistics_label)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem4)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
@@ -104,30 +104,30 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addLayout(self.horizontalLayout_3)
         spacerItem10 = QtWidgets.QSpacerItem(20, 26, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_3.addItem(spacerItem10)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        statistics_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(statistics_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 803, 26))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        statistics_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(statistics_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        statistics_window.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(statistics_window)
+        QtCore.QMetaObject.connectSlotsByName(statistics_window)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, statistics_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Statistics"))
-        self.pushButton.setText(_translate("MainWindow", "Back"))
-        self.label.setText(_translate("MainWindow", "Statistics"))
+        statistics_window.setWindowTitle(_translate("statistics_window", "Statistics"))
+        self.statistics_button_back.setText(_translate("statistics_window", "Back"))
+        self.statistics_label.setText(_translate("statistics_window", "Statistics"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    statistics_window = QtWidgets.QMainWindow()
+    ui = Ui_statistics_window()
+    ui.setupUi(statistics_window)
+    statistics_window.show()
     sys.exit(app.exec_())

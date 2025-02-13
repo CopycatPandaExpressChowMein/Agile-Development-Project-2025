@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Meny.ui'
+# Form implementation generated from reading ui file 'Menu.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -11,15 +11,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+class Ui_menu_window(object):
+    def setupUi(self, menu_window):
+        menu_window.setObjectName("menu_window")
+        menu_window.resize(800, 558)
         font = QtGui.QFont()
         font.setPointSize(1)
-        MainWindow.setFont(font)
-        MainWindow.setMouseTracking(False)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        menu_window.setFont(font)
+        menu_window.setMouseTracking(False)
+        self.centralwidget = QtWidgets.QWidget(menu_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -52,24 +52,24 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addItem(spacerItem4)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setMinimumSize(QtCore.QSize(150, 70))
+        self.menu_button_register = QtWidgets.QPushButton(self.centralwidget)
+        self.menu_button_register.setMinimumSize(QtCore.QSize(150, 70))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display Semib")
         font.setPointSize(10)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.menu_button_register.setFont(font)
+        self.menu_button_register.setObjectName("menu_button_register")
+        self.horizontalLayout_2.addWidget(self.menu_button_register)
         spacerItem5 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem5)
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setMinimumSize(QtCore.QSize(150, 70))
+        self.menu_button_statistics = QtWidgets.QPushButton(self.centralwidget)
+        self.menu_button_statistics.setMinimumSize(QtCore.QSize(150, 70))
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display Semib")
         font.setPointSize(10)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
+        self.menu_button_statistics.setFont(font)
+        self.menu_button_statistics.setObjectName("menu_button_statistics")
+        self.horizontalLayout_2.addWidget(self.menu_button_statistics)
         self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
         spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem6)
@@ -77,31 +77,31 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.verticalLayout)
         spacerItem7 = QtWidgets.QSpacerItem(20, 135, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem7)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        menu_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(menu_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 9))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        menu_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(menu_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        menu_window.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(menu_window)
+        QtCore.QMetaObject.connectSlotsByName(menu_window)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, menu_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "HabitTrack"))
-        self.label.setText(_translate("MainWindow", "HabitTrack"))
-        self.pushButton.setText(_translate("MainWindow", "Register"))
-        self.pushButton_2.setText(_translate("MainWindow", "Statistics"))
+        menu_window.setWindowTitle(_translate("menu_window", "HabitTrack"))
+        self.label.setText(_translate("menu_window", "HabitTrack"))
+        self.menu_button_register.setText(_translate("menu_window", "Register"))
+        self.menu_button_statistics.setText(_translate("menu_window", "Statistics"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    menu_window = QtWidgets.QMainWindow()
+    ui = Ui_menu_window()
+    ui.setupUi(menu_window)
+    menu_window.show()
     sys.exit(app.exec_())

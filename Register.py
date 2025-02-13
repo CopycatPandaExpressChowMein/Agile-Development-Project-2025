@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'register.ui'
+# Form implementation generated from reading ui file 'Register.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -11,11 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(463, 368)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+class Ui_register_window(object):
+    def setupUi(self, register_window):
+        register_window.setObjectName("register_window")
+        register_window.resize(463, 390)
+        self.centralwidget = QtWidgets.QWidget(register_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -23,14 +23,14 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.register_button_back = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("Segoe UI Variable Display Semib")
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.register_button_back.setFont(font)
+        self.register_button_back.setObjectName("register_button_back")
+        self.horizontalLayout_2.addWidget(self.register_button_back)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
@@ -56,30 +56,30 @@ class Ui_MainWindow(object):
         self.calendarWidget = QtWidgets.QCalendarWidget(self.centralwidget)
         self.calendarWidget.setObjectName("calendarWidget")
         self.verticalLayout_2.addWidget(self.calendarWidget)
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 463, 22))
+        register_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(register_window)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 463, 26))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        register_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(register_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        register_window.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(register_window)
+        QtCore.QMetaObject.connectSlotsByName(register_window)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, register_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Back"))
-        self.label.setText(_translate("MainWindow", "Register Wellbeing"))
+        register_window.setWindowTitle(_translate("register_window", "Register"))
+        self.register_button_back.setText(_translate("register_window", "Back"))
+        self.label.setText(_translate("register_window", "Register Wellbeing"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
+    register_window = QtWidgets.QMainWindow()
+    ui = Ui_register_window()
+    ui.setupUi(register_window)
+    register_window.show()
     sys.exit(app.exec_())
