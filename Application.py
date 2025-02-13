@@ -6,14 +6,21 @@ from Gui_components import *
 
 #Runtime funktion för applikationen, här finns huvudkoden för programmet
 def Runtime():
-    app = 
-    menu = Menu_window()
-    register = Register_window()
-    statistics = Statistics_window()
-    Registration_form = Registration_form_window()
+    app = QApplication(sys.argv)
 
     widget = QStackedWidget()
-    widget.addWidget
+    
+    menu = Menu_window(widget)
+    register = Register_window(widget)
+    statistics = Statistics_window(widget)
+    Registration_form = Registration_form_window(widget)
+    
+    widget.addWidget(menu)
+    widget.addWidget(register)
+    widget.addWidget(statistics)
+
+    widget.show()
+    sys.exit(app.exec_())
 
 
 if __name__ == "__main__":
