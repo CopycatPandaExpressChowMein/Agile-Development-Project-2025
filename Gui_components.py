@@ -66,6 +66,7 @@ class Registration_form_window(QDialog, Ui_registration_form):
         self.setupUi(self) #Funktion som finns i Registration_form.py, lägger till alla komponenter (knapp, text osv)
         self.__data = data_handler
         self.__date = date
+        self.registration_form_date_label.setText(self.__date.toString())
         self.setupButtons() #Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self):
