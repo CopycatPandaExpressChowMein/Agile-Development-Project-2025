@@ -3,7 +3,6 @@
 class User_entry:
 
     #Dubbel understreck för private
-    __date_id = None
     __wellbeing = None
     __anxiety = None
     __meals = None
@@ -19,8 +18,7 @@ class User_entry:
     # alcohol_boolean = sant/falskt, har man druckit? (Boolean)
     # drug_boolean = sant/falskt, har man missbrukat? (Boolean)
     # notes = egna anteckningar som text (String)
-    def __init__(self, date_id,  wellbeing, anxiety, meals, connected_boolean, rest_boolean, exercise_boolean, alcohol_boolean, drug_boolean, notes):
-        self.__date_id = date_id
+    def __init__(self, wellbeing, anxiety, meals, connected_boolean, rest_boolean, exercise_boolean, alcohol_boolean, drug_boolean, notes):
         self.__wellbeing = wellbeing
         self.__anxiety = anxiety
         self.__meals = meals
@@ -42,12 +40,6 @@ Notes: {self.__notes}
     
     #Get och sets för åtkomst
     #------------------------------------
-    
-    def set_date_id(self, date_id):
-        self.__date_id = date_id
-
-    def get_date_id(self):
-        return self.__date_id
 
     def set_wellbeing(self, wellbeing):
         self.__wellbeing = wellbeing

@@ -5,6 +5,7 @@ from Registration_form import Ui_registration_form
 from Statistics import Ui_statistics_window
 
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QTextCharFormat
 from User_entry_object import User_entry
 
 #I Gui_components finns klasser för alla typer av fönster vi ska ha. Dessa kan man sedan göra objekt av
@@ -53,10 +54,12 @@ class Register_window(QMainWindow, Ui_register_window):
         Registration_form = Registration_form_window(self.__data, date)
         Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + date.toString() + "]")
         Registration_form.exec()
+        self.refresh_calendar(self.__data)
 
     def refresh_calendar(self, __data):
         keys = __data.get_all_keys()
         for key in keys:
+            #Kod för att ändra färg här
             pass
 
 
