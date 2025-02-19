@@ -54,6 +54,12 @@ class Register_window(QMainWindow, Ui_register_window):
         Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + date.toString() + "]")
         Registration_form.exec()
 
+    def refresh_calendar(self, __data):
+        keys = __data.get_all_keys()
+        for key in keys:
+            pass
+
+
 #Fönster för registrering, med frågor och anteckningar
 class Registration_form_window(QDialog, Ui_registration_form):
     
@@ -74,8 +80,17 @@ class Registration_form_window(QDialog, Ui_registration_form):
 
     def registration_form_button_press_save(self):
         
-        #TODO - Kod för att spara information här
-        user_entry = User_entry(None, None, None, self.registration_form_notepad.toPlainText())
+        #TODO - Kod för att spara information härr
+        wellbeing = abs(self.Registration_form_feeling_buttons.checkedId())-1
+        anxiety = abs(self.Registration_form_anxiety_buttons.checkedId())-1
+        meals = abs(self.Registration_form_meals_buttons.checkedId())-1
+        connected_boolean = self.Registration_form_family_buttons.checkedId() == -2
+        rest_boolean = self.Registration_form_rest_buttons.checkedId() == -2
+        exercise_boolean = self.Registration_form_exercise_buttons.checkedId() == -2
+        alcohol_boolean = self.Registration_form_alcohol_buttons.checkedId() == -2
+        drug_boolean = self.Registration_form_drugs_buttons.checkedId() == -2
+        notes = self.registration_form_notepad.toPlainText()
+        user_entry = User_entry(wellbeing, anxiety, meals, connected_boolean, rest_boolean, exercise_boolean, alcohol_boolean, drug_boolean, notes)
         self.__data.add_to_dict(self.__date, user_entry)
         self.reject()
 

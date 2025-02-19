@@ -22,3 +22,6 @@ class Data_handler():
     #Hämtar och returnerar ett värde från dictionary. Ifall det finns.
     def get_from_dict(self, key):
         return self.__data_dictionary.get(key)
+    
+    def get_all_keys(self):
+        return self.__data_dictionary.keys()
