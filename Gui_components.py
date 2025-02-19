@@ -5,6 +5,7 @@ from Registration_form import Ui_registration_form
 from Statistics import Ui_statistics_window
 
 from PyQt5.QtWidgets import *
+from User_entry_object import User_entry
 
 #I Gui_components finns klasser för alla typer av fönster vi ska ha. Dessa kan man sedan göra objekt av
 
@@ -30,10 +31,14 @@ class Menu_window(QMainWindow, Ui_menu_window):
 
 #Fönster för registrering, med kalender
 class Register_window(QMainWindow, Ui_register_window):
+    
+    __data = None
+    
     #Konstruktören, detta körs när ett nytt objekt initieras
-    def __init__(self, qWidget):
+    def __init__(self, qWidget, data_handler):
         super(Register_window, self).__init__()
         self.setupUi(self) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
+        self.__data = data_handler
         self.setupButtons(qWidget) #Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self, qWidget):
@@ -44,22 +49,34 @@ class Register_window(QMainWindow, Ui_register_window):
         qWidget.setCurrentIndex(0)
 
     def register_calendar_widget_pressed(self):
-        Registration_form = Registration_form_window()
-        Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + self.calendarWidget.selectedDate().toString() + "]")
+        date = self.calendarWidget.selectedDate()
+        Registration_form = Registration_form_window(self.__data, date)
+        Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + date.toString() + "]")
         Registration_form.exec()
 
 #Fönster för registrering, med frågor och anteckningar
 class Registration_form_window(QDialog, Ui_registration_form):
+    
+    __data = None
+    __date = None
+
     #Konstruktören, detta körs när ett nytt objekt initieras
-    def __init__(self):
+    def __init__(self, data_handler, date):
         super(Registration_form_window, self).__init__()
         self.setupUi(self) #Funktion som finns i Registration_form.py, lägger till alla komponenter (knapp, text osv)
+        self.__data = data_handler
+        self.__date = date
+        self.registration_form_date_label.setText(self.__date.toString())
         self.setupButtons() #Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self):
         self.registration_form_button_save.clicked.connect(lambda: self.registration_form_button_press_save())
 
     def registration_form_button_press_save(self):
+        
+        #TODO - Kod för att spara information här
+        user_entry = User_entry(None, None, None, self.registration_form_notepad.toPlainText())
+        self.__data.add_to_dict(self.__date, user_entry)
         self.reject()
 
 #Fönster för statistik#Funktion som kopplar knapparna
