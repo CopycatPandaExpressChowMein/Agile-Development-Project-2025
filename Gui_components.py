@@ -76,10 +76,54 @@ class Registration_form_window(QDialog, Ui_registration_form):
         self.__data = data_handler
         self.__date = date
         self.registration_form_date_label.setText(self.__date.toString())
+        self.try_load_entry_data()
         self.setupButtons() #Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self):
         self.registration_form_button_save.clicked.connect(lambda: self.registration_form_button_press_save())
+
+    def try_load_entry_data(self):
+        if self.__date in self.__data.get_all_keys():
+            print("Previous entry found")
+
+            user_entry = self.__data.get_from_dict(self.__date)
+
+            wellbeing = self.Registration_form_feeling_buttons.button(-abs(user_entry.get_wellbeing())-1)
+            if wellbeing != None:
+                wellbeing.setChecked(True)
+
+            anxiety = self.Registration_form_anxiety_buttons.button(-abs(user_entry.get_anxiety())-1)
+            if anxiety != None:
+                anxiety.setChecked(True)
+
+            meals = self.Registration_form_meals_buttons.button(-abs(user_entry.get_meals())-1)
+            if meals != None:
+                meals.setChecked(True)
+
+            connected_boolean = self.Registration_form_family_buttons.button(-abs(user_entry.get_connected_boolean())-1)
+            if connected_boolean != None:
+                connected_boolean.setChecked(True)
+
+            rest_boolean = self.Registration_form_rest_buttons.button(-abs(user_entry.get_rest_boolean())-1)
+            if  rest_boolean != None:
+                 rest_boolean.setChecked(True)
+
+            exercise_boolean = self.Registration_form_exercise_buttons.button(-abs(user_entry.get_exercise_boolean())-1)
+            if exercise_boolean != None:
+                exercise_boolean.setChecked(True)
+
+            alcohol_boolean = self.Registration_form_alcohol_buttons.button(-abs(user_entry.get_alcohol_boolean())-1)
+            if alcohol_boolean != None:
+                alcohol_boolean.setChecked(True)
+
+            drug_boolean = self.Registration_form_drugs_buttons.button(-abs(user_entry.get_drug_boolean())-1)
+            if drug_boolean != None:
+                drug_boolean.setChecked(True)
+
+            self.registration_form_notepad.setPlainText(user_entry.get_notes())
+
+
+           
 
     def registration_form_button_press_save(self):
         
@@ -96,6 +140,8 @@ class Registration_form_window(QDialog, Ui_registration_form):
         user_entry = User_entry(wellbeing, anxiety, meals, connected_boolean, rest_boolean, exercise_boolean, alcohol_boolean, drug_boolean, notes)
         self.__data.add_to_dict(self.__date, user_entry)
         self.reject()
+
+
 
 #Fönster för statistik#Funktion som kopplar knapparna
 class Statistics_window(QMainWindow, Ui_statistics_window):

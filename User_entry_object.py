@@ -45,7 +45,7 @@ Notes: {self.__notes}
         self.__wellbeing = wellbeing
 
     def get_wellbeing(self):
-            return self.__wellbeing
+        return self.__wellbeing
     
     def set_anxiety(self, anxiety):
         self.__anxiety = anxiety
@@ -86,7 +86,7 @@ Notes: {self.__notes}
     def set_drug_boolean(self, drug_boolean):
         self.__drug_boolean = drug_boolean
 
-    def get_alcohol_boolean(self):
+    def get_drug_boolean(self):
         return self.__drug_boolean
     
     def set_notes(self, notes):

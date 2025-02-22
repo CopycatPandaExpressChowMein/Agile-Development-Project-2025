@@ -7,7 +7,12 @@ class Data_handler():
     #Konstruktör, går att passera en fylld dictionary. 
     #Ifall inget värde passeras till konstruktören så används en tom dictionary som default
     def __init__(self, dictionary = {}):
-        self.__data_dictionary = dictionary
+        try:
+            print("Data found")
+            self.__data_dictionary = load_bin_file("entry.bin")
+        except:
+            print("Data not found")
+            self.__data_dictionary = dictionary
 
     #Lägger till item i dictionary, nyckel : värde, där nyckeln är datum och värde är en user entry
     def add_to_dict(self, key, object):
@@ -18,6 +23,7 @@ class Data_handler():
     #Tar bort ett värde från dictionary, passera en key, som datum
     def remove_from_dict(self, key):
         self.__data_dictionary.pop(key)
+
     
     #Hämtar och returnerar ett värde från dictionary. Ifall det finns.
     def get_from_dict(self, key):

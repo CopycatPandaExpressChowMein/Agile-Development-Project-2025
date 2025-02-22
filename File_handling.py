@@ -7,9 +7,9 @@ def save_file(data, filename, filepath=pathlib.Path.cwd().__str__()):
         file.write(data)
 
 
-def load_file(data, filename, filepath=pathlib.Path.cwd().__str__()):
+def load_file(filename, filepath=pathlib.Path.cwd().__str__()):
     with open(filepath + "/" + filename, 'r') as file:
-        file.read(data)
+        return file.read()
 
 
 def save_bin_file(data, filename, filepath=pathlib.Path.cwd().__str__()):
@@ -17,7 +17,7 @@ def save_bin_file(data, filename, filepath=pathlib.Path.cwd().__str__()):
         pickle.dump(data, file)
 
 
-def load_bin_file(data, filename, filepath=pathlib.Path.cwd().__str__()):
+def load_bin_file(filename, filepath=pathlib.Path.cwd().__str__()):
     with open(filepath + "/" + filename, 'rb') as file:
-        pickle.load(data, file)
+        return pickle.load(file)
 
