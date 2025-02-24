@@ -2,6 +2,7 @@ from Menu import Ui_menu_window
 from Register import Ui_register_window
 from Registration_form import Ui_registration_form
 from Statistics import Ui_statistics_window
+from Algorithm_handler import Algorithm_handler
 
 from PyQt5.QtWidgets import *
 from User_entry_object import User_entry
@@ -139,7 +140,7 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, data): 
         super(Statistics_window, self).__init__()
-        self.setupUi(self)  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
+        self.setupUi(self, Algorithm_handler(data))  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan
 
     def setupButtons(self, qWidget):
