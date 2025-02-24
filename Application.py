@@ -4,15 +4,7 @@ from Gui_components import Menu_window, Register_window, Statistics_window
 from User_entry_data_handler import Data_handler
 from security import check_access  # 🔐 Importera säkerhetsfunktionen
 
-<<<<<<< HEAD
-
-
-#Application.py innehåller all huvudkod, i princip en Main :)
-
-#Runtime funktion för applikationen, här finns huvudkoden för programmet
-=======
 # 🏃‍♂️ Funktion som startar programmet
->>>>>>> 662b94d48ef0be2b6f293ccb1b21abdd4c170ad9
 def Runtime():
     app = QApplication(sys.argv)
     widget = QStackedWidget()
