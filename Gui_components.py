@@ -38,7 +38,7 @@ class Register_window(QMainWindow, Ui_register_window):
     #Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, data_handler):
         super(Register_window, self).__init__()
-        self.setupUi(self) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
+        self.setupUi(self, data_handler) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
         self.__data = data_handler
         self.setupButtons(qWidget) #Funktion som kopplar knapparna, finns nedan
     
@@ -54,13 +54,7 @@ class Register_window(QMainWindow, Ui_register_window):
         Registration_form = Registration_form_window(self.__data, date)
         Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + date.toString() + "]")
         Registration_form.exec()
-        self.refresh_calendar(self.__data)
 
-    def refresh_calendar(self, __data):
-        keys = __data.get_all_keys()
-        for key in keys:
-            #Kod för att ändra färg här
-            pass
 
 
 #Fönster för registrering, med frågor och anteckningar

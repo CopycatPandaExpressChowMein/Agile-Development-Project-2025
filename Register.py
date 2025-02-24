@@ -9,10 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Calendar_widget import Calendar_widget
 
 
 class Ui_register_window(object):
-    def setupUi(self, register_window):
+    def setupUi(self, register_window, data):
         register_window.setObjectName("register_window")
         register_window.resize(463, 390)
         self.centralwidget = QtWidgets.QWidget(register_window)
@@ -53,7 +54,8 @@ class Ui_register_window(object):
         self.horizontalLayout.addItem(spacerItem2)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout_2.addLayout(self.verticalLayout)
-        self.calendarWidget = QtWidgets.QCalendarWidget(self.centralwidget)
+        #self.calendarWidget = QtWidgets.QCalendarWidget(self.centralwidget)
+        self.calendarWidget = Calendar_widget(data)
         self.calendarWidget.setObjectName("calendarWidget")
         self.verticalLayout_2.addWidget(self.calendarWidget)
         register_window.setCentralWidget(self.centralwidget)
