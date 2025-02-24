@@ -9,10 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import pyqtgraph as pg
 
 
 class Ui_statistics_window(object):
-    def setupUi(self, statistics_window):
+    def setupUi(self, statistics_window, algorithm_handler):
         statistics_window.setObjectName("statistics_window")
         statistics_window.resize(803, 828)
         self.centralwidget = QtWidgets.QWidget(statistics_window)
@@ -61,42 +62,57 @@ class Ui_statistics_window(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
-        self.frame = QtWidgets.QFrame(self.centralwidget)
+
+        __days = algorithm_handler.entry_amount()
+
+        self.frame = pg.PlotWidget()
+        self.frame.setBackground("w")
+        __wellbeing_array = algorithm_handler.wellbeing_statistics()
+        self.frame.plot(__days, __wellbeing_array)
+        
         self.frame.setMinimumSize(QtCore.QSize(250, 250))
         self.frame.setMaximumSize(QtCore.QSize(250, 250))
-        self.frame.setFrameShape(QtWidgets.QFrame.Box)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
+        self.frame.setObjectName("graph_wellbeing")
         self.gridLayout.addWidget(self.frame, 0, 0, 1, 1)
         spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem5, 0, 1, 1, 1)
-        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
+        
+        
+        self.frame_2 = pg.PlotWidget()
+        self.frame_2.setBackground("w")
+        __anxiety_array = algorithm_handler.anxiety_statistics()
+        self.frame_2.plot(__days, __anxiety_array)
+
         self.frame_2.setMinimumSize(QtCore.QSize(250, 250))
         self.frame_2.setMaximumSize(QtCore.QSize(250, 250))
-        self.frame_2.setFrameShape(QtWidgets.QFrame.Box)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
+        self.frame_2.setObjectName("graph_anxiety")
         self.gridLayout.addWidget(self.frame_2, 0, 2, 1, 1)
         spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem6, 1, 0, 1, 1)
         spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem7, 1, 2, 1, 1)
-        self.frame_3 = QtWidgets.QFrame(self.centralwidget)
+        
+        self.frame_3 = pg.PlotWidget()
+        self.frame_3.setBackground("w")
+        __meals_array = algorithm_handler.meals_statistics()
+        self.frame_3.plot(__days, __meals_array)
         self.frame_3.setMinimumSize(QtCore.QSize(250, 250))
         self.frame_3.setMaximumSize(QtCore.QSize(250, 250))
-        self.frame_3.setFrameShape(QtWidgets.QFrame.Box)
-        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_3.setObjectName("frame_3")
+        self.frame_3.setObjectName("graph_meals")
         self.gridLayout.addWidget(self.frame_3, 2, 0, 1, 1)
         spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem8, 2, 1, 1, 1)
-        self.frame_4 = QtWidgets.QFrame(self.centralwidget)
+        
+        
+        self.frame_4 = pg.PlotWidget()
+        self.frame_4.setBackground("w")
+        __average_array = algorithm_handler.average_statistics()
+        self.frame_4.plot(__days, __average_array)
         self.frame_4.setMinimumSize(QtCore.QSize(250, 250))
         self.frame_4.setMaximumSize(QtCore.QSize(250, 250))
-        self.frame_4.setFrameShape(QtWidgets.QFrame.Box)
-        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_4.setObjectName("frame_4")
+        self.frame_4.setObjectName("graph_average")
         self.gridLayout.addWidget(self.frame_4, 2, 2, 1, 1)
+
         self.verticalLayout_2.addLayout(self.gridLayout)
         self.horizontalLayout_3.addLayout(self.verticalLayout_2)
         spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)

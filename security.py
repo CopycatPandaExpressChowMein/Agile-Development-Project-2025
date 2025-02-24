@@ -2,7 +2,7 @@ import hashlib
 import hmac
 import os
 import json
-import requests
+#import requests
 
 # 🎭 Rollbaserat åtkomstkontrollsystem (RBAC)
 ROLE_PERMISSIONS = {
