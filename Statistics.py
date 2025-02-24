@@ -69,7 +69,7 @@ class Ui_statistics_window(object):
         self.frame.setBackground("w")
         __wellbeing_array = algorithm_handler.wellbeing_statistics()
         self.frame.plot(__days, __wellbeing_array)
-
+        
         self.frame.setMinimumSize(QtCore.QSize(250, 250))
         self.frame.setMaximumSize(QtCore.QSize(250, 250))
         self.frame.setObjectName("graph_wellbeing")
@@ -105,7 +105,7 @@ class Ui_statistics_window(object):
         
         
         self.frame_4 = pg.PlotWidget()
-        self.frame_4.setBackground("g")
+        self.frame_4.setBackground("w")
         __average_array = algorithm_handler.average_statistics()
         self.frame_4.plot(__days, __average_array)
         self.frame_4.setMinimumSize(QtCore.QSize(250, 250))
