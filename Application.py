@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import *
 from Gui_components import *
 from User_entry_data_handler import *
 
+
+
 #Application.py innehåller all huvudkod, i princip en Main :)
 
 #Runtime funktion för applikationen, här finns huvudkoden för programmet
