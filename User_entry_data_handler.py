@@ -7,9 +7,9 @@ class Data_handler():
     #Konstruktör, går att passera en fylld dictionary. 
     #Ifall inget värde passeras till konstruktören så används en tom dictionary som default
     def __init__(self, dictionary = {}):
-        try:
-            print("Data found")
+        try:     
             self.__data_dictionary = load_bin_file("entry.bin")
+            print("Data found")
         except:
             print("Data not found")
             self.__data_dictionary = dictionary
