@@ -14,7 +14,7 @@ def Runtime():
     # Skapa fönster för de olika vyerna i applikationen
     menu = Menu_window(widget)  
     register = Register_window(widget, data_handler)
-    statistics = Statistics_window(widget)
+    statistics = Statistics_window(widget, data_handler)
     
     # Lägg till fönstren i det staplade widget-systemet
     widget.addWidget(menu)
