@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_statistics_window(object):
-    def setupUi(self, statistics_window):
+    def setupUi(self, statistics_window, algorithm_handler):
         statistics_window.setObjectName("statistics_window")
         statistics_window.resize(803, 828)
         self.centralwidget = QtWidgets.QWidget(statistics_window)

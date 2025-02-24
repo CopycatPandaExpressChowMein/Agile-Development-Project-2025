@@ -1,4 +1,3 @@
-import num
 
 class Algorithm_handler():
     

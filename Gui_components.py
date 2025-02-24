@@ -137,7 +137,7 @@ class Registration_form_window(QDialog, Ui_registration_form):
 #Fönster för statistik#Funktion som kopplar knapparna
 class Statistics_window(QMainWindow, Ui_statistics_window):
     # Konstruktören, detta körs när ett nytt objekt initieras
-    def __init__(self, qWidget): 
+    def __init__(self, qWidget, data): 
         super(Statistics_window, self).__init__()
         self.setupUi(self)  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan
