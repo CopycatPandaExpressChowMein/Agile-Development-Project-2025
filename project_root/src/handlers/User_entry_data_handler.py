@@ -1,4 +1,4 @@
-from File_handling import save_bin_file, load_bin_file
+from handlers.File_handling import *
 
 class Data_handler:
     # Privat dictionary för att lagra data

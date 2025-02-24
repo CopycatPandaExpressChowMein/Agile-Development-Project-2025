@@ -3,8 +3,8 @@ import unittest
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from PyQt5.QtTest import QTest
 from PyQt5.QtCore import Qt
-from Gui_components import Menu_window, Register_window, Statistics_window
-from User_entry_data_handler import Data_handler
+from src.Gui_components import Menu_window, Register_window, Statistics_window
+from src.handlers.User_entry_data_handler import Data_handler
 
 class TestApp(unittest.TestCase):
     @classmethod
