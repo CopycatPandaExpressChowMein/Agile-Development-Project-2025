@@ -33,9 +33,25 @@ class Algorithm_handler():
         for key in self.__data.get_all_keys():
             user_entry = self.__data.get_from_dict(key)
             
-            #Code for average here
+            #Code for average 
+            val = 0
+            val += user_entry.get_wellbeing()
+            val += user_entry.get_anxiety()
+            val += user_entry.get_meals()
 
-            average.append(user_entry.get_meals())
+            if(user_entry.get_connected_boolean()):
+                val += 1
+            if(user_entry.get_rest_boolean()):
+                val += 1
+            if(user_entry.get_exercise_boolean()):
+                val += 1
+            if(user_entry.get_alcohol_boolean()):
+                val += 1
+            if(user_entry.get_drug_boolean()):
+                val += 1
+            
+            
+            average.append(val/8)
         return average
 
     def entry_amount(self):
