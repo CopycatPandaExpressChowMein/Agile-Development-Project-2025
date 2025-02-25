@@ -1,4 +1,3 @@
-
 class Algorithm_handler():
     
     __data = None

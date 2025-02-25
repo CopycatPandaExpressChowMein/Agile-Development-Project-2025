@@ -1,8 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QStackedWidget
-from Gui_components import Menu_window, Register_window, Statistics_window
-from handlers.User_entry_data_handler import Data_handler
-from security.security import check_access  # 🔐 Importera säkerhetsfunktionen
+from src.Gui_components import Menu_window, Register_window, Statistics_window
+from src.handlers.User_entry_data_handler import Data_handler
+from src.security.security import check_access  # 🔐 Importera säkerhetsfunktionen
 
 # 🏃‍♂️ Funktion som startar programmet
 def Runtime():

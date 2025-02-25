@@ -1,14 +1,16 @@
-from handlers.File_handling import *
+from src.handlers.File_handling import *
 
 class Data_handler:
     # Privat dictionary för att lagra data
     __data_dictionary = {}
 
+    SAVEPATH = "/bin"
+
     #Konstruktör, går att passera en fylld dictionary. 
     #Ifall inget värde passeras till konstruktören så används en tom dictionary som default
     def __init__(self, dictionary = {}):
         try:     
-            self.__data_dictionary = load_bin_file("entry.bin")
+            self.__data_dictionary = load_bin_file("entry.bin", self.SAVEPATH)
             print("Data found")
         except:
             print("Data not found")
@@ -17,13 +19,13 @@ class Data_handler:
     def add_to_dict(self, key, value):
         """ Lägger till ett nytt värde i dictionary och sparar det. """
         self.__data_dictionary[key] = value
-        save_bin_file(self.__data_dictionary, "entry.bin")  # Spara efter ändring
+        save_bin_file(self.__data_dictionary, "entry.bin", self.SAVEPATH)  # Spara efter ändring
 
     def remove_from_dict(self, key):
         """ Tar bort ett värde från dictionary och sparar ändringen. """
         if key in self.__data_dictionary:
             del self.__data_dictionary[key]
-            save_bin_file(self.__data_dictionary, "entry.bin")  # Uppdatera filen
+            save_bin_file(self.__data_dictionary, "entry.bin", self.SAVEPATH)  # Uppdatera filen
         else:
             raise KeyError(f"Nyckeln '{key}' finns ej i dictionary.")
     
@@ -41,5 +43,5 @@ class Data_handler:
     def clear_data(self):
         """ Rensar all sparad data och sparar en tom dictionary. """
         self.__data_dictionary.clear()
-        save_bin_file(self.__data_dictionary, "entry.bin")  # Spara tom dictionary
+        save_bin_file(self.__data_dictionary, "entry.bin", self.SAVEPATH)  # Spara tom dictionary
 

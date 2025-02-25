@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Calendar_widget import Calendar_widget
+from src.gui.Calendar_widget import Calendar_widget
 
 
 class Ui_register_window(object):
