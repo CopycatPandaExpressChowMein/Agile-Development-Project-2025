@@ -1,11 +1,11 @@
-from Menu import Ui_menu_window
-from Register import Ui_register_window
-from Registration_form import Ui_registration_form
-from Statistics import Ui_statistics_window
 from Algorithm_handler import Algorithm_handler
+from gui.Menu import Ui_menu_window
+from gui.Register import Ui_register_window
+from gui.Registration_form import Ui_registration_form
+from gui.Statistics import Ui_statistics_window
 
 from PyQt5.QtWidgets import *
-from User_entry_object import User_entry
+from handlers.User_entry_object import User_entry
 
 # I Gui_components finns klasser för alla typer av fönster vi ska ha. Dessa kan man sedan göra objekt av
 
