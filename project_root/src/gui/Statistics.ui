@@ -139,16 +139,21 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>250</height>
+              <width>1000</width>
+              <height>1000</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Box</enum>
+             <enum>QFrame::Panel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QWidget" name="graph_1" native="true"/>
+             </item>
+            </layout>
            </widget>
           </item>
           <item row="0" column="1">
@@ -174,16 +179,21 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>250</height>
+              <width>1000</width>
+              <height>1000</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Box</enum>
+             <enum>QFrame::Panel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QWidget" name="graph_2" native="true"/>
+             </item>
+            </layout>
            </widget>
           </item>
           <item row="1" column="0">
@@ -222,16 +232,21 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>250</height>
+              <width>1000</width>
+              <height>1000</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Box</enum>
+             <enum>QFrame::Panel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QWidget" name="graph_3" native="true"/>
+             </item>
+            </layout>
            </widget>
           </item>
           <item row="2" column="1">
@@ -257,16 +272,21 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>250</width>
-              <height>250</height>
+              <width>1000</width>
+              <height>1000</height>
              </size>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Box</enum>
+             <enum>QFrame::Panel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QWidget" name="graph_4" native="true"/>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>

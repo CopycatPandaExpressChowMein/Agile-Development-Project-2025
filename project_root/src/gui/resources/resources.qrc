@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="logo">
+    <file>logga-HabitTrack2.png</file>
+  </qresource>
+</RCC>

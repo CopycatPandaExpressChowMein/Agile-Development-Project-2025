@@ -4,9 +4,11 @@ from src.gui.Register import Ui_register_window
 from src.gui.Registration_form import Ui_registration_form
 from src.gui.Statistics import Ui_statistics_window
 
+from src.gui.Calendar_widget import Calendar_widget
+
 from PyQt5.QtWidgets import *
 from src.handlers.User_entry_object import User_entry
-from src.handlers.Algorithm_handler import Algorithm_handler
+import pyqtgraph as pg
 
 # I Gui_components finns klasser för alla typer av fönster vi ska ha. Dessa kan man sedan göra objekt av
 
@@ -26,6 +28,7 @@ class Menu_window(QMainWindow, Ui_menu_window):
         qWidget.setCurrentIndex(1)
 
     def menu_button_press_statistics(self, qWidget):
+        qWidget.widget(2).rePlot()
         qWidget.setCurrentIndex(2)
         
 
@@ -37,7 +40,7 @@ class Register_window(QMainWindow, Ui_register_window):
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, data_handler):
         super(Register_window, self).__init__()
-        self.setupUi(self, data_handler) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
+        self.setupUi(self, Calendar_widget(data_handler)) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
         self.__data = data_handler
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan
     
@@ -138,14 +141,63 @@ class Registration_form_window(QDialog, Ui_registration_form):
 
 #Fönster för statistik#Funktion som kopplar knapparna
 class Statistics_window(QMainWindow, Ui_statistics_window):
+
+    __algorithm_handler = None
+
     # Konstruktören, detta körs när ett nytt objekt initieras
-    def __init__(self, qWidget, data): 
+    def __init__(self, qWidget, algorithm_handler): 
         super(Statistics_window, self).__init__()
-        self.setupUi(self, Algorithm_handler(data))  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
+
+        self.__algorithm_handler = algorithm_handler
+
+        graphs = []
+        
+        graphs.append(self.graphSetup("Wellbeing vs Time", "Wellbeing"))
+        graphs.append(self.graphSetup("Anxiety vs Time", "Anxiety"))
+        graphs.append(self.graphSetup("Meals vs Time", "Meals"))
+        graphs.append(self.graphSetup("Average mental health vs Time", "Average"))
+
+        self.setupUi(self, graphs)  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan
 
     def setupButtons(self, qWidget):
         self.statistics_button_back.clicked.connect(lambda: self.statistics_button_press_back(qWidget))
+
+    def graphSetup(self, title, yVal):
+        graph = pg.PlotWidget()
+        graph.setBackground((255,255,255,0))
+        graph.setTitle(title)
+        graph.setLabel("left", yVal)
+        graph.setLabel("bottom", "Days")
+        graph.setYRange(0, 5)
+
+
+        return graph
+
+
+    def rePlot(self):
+        POINT_SYMBOl = "o"
+        POINT_SYMBOl_COLOR = "k"
+        POINT_SYMBOl_SIZE = 5
+        LINE_COLOR = (255,0,0)
+        pen = pg.mkPen(color=LINE_COLOR)
+
+        days = self.__algorithm_handler.entry_amount()
+
+        wellbeing = self.__algorithm_handler.wellbeing_statistics()
+        self.graph_1.plot(days, wellbeing, pen=pen, symbol=POINT_SYMBOl, symbolSize = POINT_SYMBOl_SIZE , symbolBrush = POINT_SYMBOl_COLOR)
+
+        anxiety = self.__algorithm_handler.anxiety_statistics()
+        self.graph_2.plot(days, anxiety, pen=pen, symbol=POINT_SYMBOl, symbolSize = POINT_SYMBOl_SIZE , symbolBrush = POINT_SYMBOl_COLOR)
+
+        meals = self.__algorithm_handler.meals_statistics()
+        self.graph_3.plot(days, meals, pen=pen, symbol=POINT_SYMBOl, symbolSize = POINT_SYMBOl_SIZE , symbolBrush = POINT_SYMBOl_COLOR)
+
+        average = self.__algorithm_handler.average_statistics()
+        self.graph_4.plot(days, average, pen=pen, symbol=POINT_SYMBOl, symbolSize = POINT_SYMBOl_SIZE , symbolBrush = POINT_SYMBOl_COLOR)
+
+
+        
 
     def statistics_button_press_back(self, qWidget):
         qWidget.setCurrentIndex(0)

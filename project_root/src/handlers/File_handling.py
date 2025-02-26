@@ -26,4 +26,5 @@ def load_bin_file(filename, filepath):
         with open(str(pathlib.Path.cwd()) + filepath + "/" + filename, 'rb') as file:
             return pickle.load(file)
     except (FileNotFoundError, EOFError):
+        print("No file found [ERROR]")
         return {}  # Returnera en tom ordbok om filen inte finns eller är tom
