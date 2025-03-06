@@ -44,9 +44,9 @@ class Algorithm_handler():
             if(user_entry.get_exercise_boolean()):
                 val += 1
             if(user_entry.get_alcohol_boolean()):
-                val += 1
+                val -= 1
             if(user_entry.get_drug_boolean()):
-                val += 1
+                val -= 1
             
             
             average.append(val/8)
