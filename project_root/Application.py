@@ -2,8 +2,10 @@ import sys
 from PyQt5.QtWidgets import QApplication, QStackedWidget
 from src.Gui_components import Menu_window, Register_window, Statistics_window
 from src.handlers.User_entry_data_handler import Data_handler
+from src.handlers.Cloud_handler import Cloud_handler
 from src.handlers.Algorithm_handler import Algorithm_handler
 from src.handlers.Notification_handler import Notification_handler
+from src.handlers.Network_handler import *
 from src.security.security import check_access  # 🔐 Importera säkerhetsfunktionen
 
 # 🏃‍♂️ Funktion som startar programmet
@@ -11,8 +13,11 @@ def Runtime():
     app = QApplication(sys.argv)
     widget = QStackedWidget()
     
-    
-    data_handler = Data_handler()  # Skapar ett objekt för att hantera data
+    if check_connection():
+        cloud_handler = Cloud_handler()
+        data_handler = Data_handler(cloud_handler)  # Skapar ett objekt för att hantera data
+    else:
+        data_handler = Data_handler()
     algorithm_handler = Algorithm_handler(data_handler)
     notification_handler = Notification_handler(algorithm_handler)
     

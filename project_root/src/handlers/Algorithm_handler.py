@@ -8,6 +8,7 @@ class Algorithm_handler():
     def wellbeing_statistics(self):
         wellbeing = []
         for key in self.__data.get_all_keys():
+
             user_entry = self.__data.get_from_dict(key)
             wellbeing.append(user_entry.get_wellbeing())
         return wellbeing
@@ -15,6 +16,7 @@ class Algorithm_handler():
     def anxiety_statistics(self):
         anxiety = []
         for key in self.__data.get_all_keys():
+
             user_entry = self.__data.get_from_dict(key)
             anxiety.append(user_entry.get_anxiety())
         return anxiety
@@ -29,6 +31,8 @@ class Algorithm_handler():
     def average_statistics(self):
         average = []
         for key in self.__data.get_all_keys():
+            
+            
             user_entry = self.__data.get_from_dict(key)
             
             #Code for average 

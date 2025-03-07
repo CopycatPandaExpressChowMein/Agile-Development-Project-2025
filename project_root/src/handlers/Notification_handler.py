@@ -13,8 +13,11 @@ class Notification_handler:
 
 
     def show_notification(self):
-
-        __NOTIFICATION_TEXT, __NOTIFICATION_STYLE = self.get_notification_content()
+        try:
+            __NOTIFICATION_TEXT, __NOTIFICATION_STYLE = self.get_notification_content()
+        except:
+            __NOTIFICATION_TEXT = "No entries found."
+            __NOTIFICATION_STYLE = "reminder"
 
         toast("HabitTrack - Advice!", __NOTIFICATION_TEXT, scenario=__NOTIFICATION_STYLE)
         
