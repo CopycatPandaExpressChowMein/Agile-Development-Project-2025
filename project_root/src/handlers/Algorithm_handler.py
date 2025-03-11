@@ -3,6 +3,9 @@ class Algorithm_handler():
     __data = None
 
     def __init__(self, data):
+
+        print("Constructing an object of type algorithm handler...")
+
         self.__data = data
 
     def wellbeing_statistics(self):
@@ -49,21 +52,21 @@ class Algorithm_handler():
             user_entry = self.__data.get_from_dict(key)
             
             #Code for average 
-            val = 0
-            val += user_entry.get_wellbeing()
-            val += user_entry.get_anxiety()
-            val += user_entry.get_meals()
+            val = 40
+            val -= user_entry.get_wellbeing()
+            val -= user_entry.get_anxiety()
+            val -= user_entry.get_meals()
 
             if(user_entry.get_connected_boolean()):
-                val += 1
+                val -= 3
             if(user_entry.get_rest_boolean()):
-                val += 1
+                val -= 3
             if(user_entry.get_exercise_boolean()):
-                val += 1
-            if(user_entry.get_alcohol_boolean()):
-                val -= 1
-            if(user_entry.get_drug_boolean()):
-                val -= 1
+                val -= 3
+            if not (user_entry.get_alcohol_boolean()):
+                val -= 8
+            if not (user_entry.get_drug_boolean()):
+                val -= 8
             
             
             average.append(val/8)
