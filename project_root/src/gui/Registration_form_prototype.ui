@@ -93,7 +93,7 @@
             </font>
            </property>
            <property name="text">
-            <string>Your Wellbeing</string>
+            <string>Your Well-being</string>
            </property>
           </widget>
          </item>
@@ -1396,7 +1396,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>yes</string>
+                       <string>Yes</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_rest_buttons</string>
@@ -1425,7 +1425,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>no</string>
+                       <string>No</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_rest_buttons</string>
@@ -1518,7 +1518,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>yes</string>
+                       <string>Yes</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_family_buttons</string>
@@ -1547,7 +1547,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>no</string>
+                       <string>No</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_family_buttons</string>
@@ -1640,7 +1640,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>yes</string>
+                       <string>Yes</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_exercise_buttons</string>
@@ -1669,7 +1669,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>no</string>
+                       <string>No</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_exercise_buttons</string>
@@ -1762,7 +1762,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>yes</string>
+                       <string>Yes</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_drugs_buttons</string>
@@ -1791,7 +1791,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>no</string>
+                       <string>No</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_drugs_buttons</string>
@@ -1884,7 +1884,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>yes</string>
+                       <string>Yes</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_alcohol_buttons</string>
@@ -1913,7 +1913,7 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>no</string>
+                       <string>No</string>
                       </property>
                       <attribute name="buttonGroup">
                        <string notr="true">Registration_form_alcohol_buttons</string>
@@ -2130,13 +2130,13 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="Registration_form_feeling_buttons"/>
   <buttongroup name="Registration_form_anxiety_buttons"/>
+  <buttongroup name="Registration_form_feeling_buttons"/>
   <buttongroup name="Registration_form_family_buttons"/>
-  <buttongroup name="Registration_form_drugs_buttons"/>
-  <buttongroup name="Registration_form_alcohol_buttons"/>
-  <buttongroup name="Registration_form_meals_buttons"/>
-  <buttongroup name="Registration_form_exercise_buttons"/>
   <buttongroup name="Registration_form_rest_buttons"/>
+  <buttongroup name="Registration_form_exercise_buttons"/>
+  <buttongroup name="Registration_form_drugs_buttons"/>
+  <buttongroup name="Registration_form_meals_buttons"/>
+  <buttongroup name="Registration_form_alcohol_buttons"/>
  </buttongroups>
 </ui>

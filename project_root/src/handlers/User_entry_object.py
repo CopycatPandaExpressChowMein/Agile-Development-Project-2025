@@ -19,6 +19,9 @@ class User_entry:
     # drug_boolean = sant/falskt, har man missbrukat? (Boolean)
     # notes = egna anteckningar som text (String)
     def __init__(self, wellbeing, anxiety, meals, connected_boolean, rest_boolean, exercise_boolean, alcohol_boolean, drug_boolean, notes):
+        
+        print("Constructing object of type user entry...")
+        
         self.__wellbeing = wellbeing
         self.__anxiety = anxiety
         self.__meals = meals

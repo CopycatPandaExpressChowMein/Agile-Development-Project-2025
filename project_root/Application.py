@@ -10,21 +10,25 @@ from src.security.security import check_access  # 🔐 Importera säkerhetsfunkt
 
 # 🏃‍♂️ Funktion som startar programmet
 def Runtime():
+
+    print("program start...")
+
     app = QApplication(sys.argv)
     widget = QStackedWidget()
     
+    # Kollar uppkoppling till internet.
     if check_connection():
-        cloud_handler = Cloud_handler()
-        data_handler = Data_handler(cloud_handler)  # Skapar ett objekt för att hantera data
+        cloud_handler = Cloud_handler() # Skapar ett objekt för att hantera cloud information och funktioner
+        data_handler = Data_handler(cloud_handler)  # Skapar ett objekt för att hantera data, med cloud funktioner
     else:
-        data_handler = Data_handler()
-    algorithm_handler = Algorithm_handler(data_handler)
-    notification_handler = Notification_handler(algorithm_handler)
+        data_handler = Data_handler() # Skapar ett objekt för att hantera data
+    algorithm_handler = Algorithm_handler(data_handler) # Skapar ett objekt för att arbeta med data
+    notification_handler = Notification_handler(algorithm_handler) # Skapar ett objekt för att hantera notifikationer
     
 
     # Skapa fönster för de olika vyerna i applikationen
-    menu = Menu_window(widget, notification_handler)  
-    register = Register_window(widget, data_handler, notification_handler)
+    menu = Menu_window(widget, notification_handler)
+    register = Register_window(widget, data_handler, notification_handler) 
     statistics = Statistics_window(widget, algorithm_handler)
     
     # Lägg till fönstren i det staplade widget-systemet
@@ -38,7 +42,7 @@ def Runtime():
         print("❌ Åtkomst nekad!")
         return  # Stoppa programmet om användaren saknar behörighet
 
-    widget.resize(600, 500)
+    widget.resize(600, 500) # Förminskar storleken på fönstret innan det körs.
     widget.show()  # Visa huvudfönstret
     
     sys.exit(app.exec_())  # Kör applikationen tills den stängs

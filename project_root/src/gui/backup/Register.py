@@ -9,12 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from src.gui.Calendar_widget import Calendar_widget
 
 
 class Ui_register_window(object):
     def setupUi(self, register_window, calendar_widget):
         register_window.setObjectName("register_window")
-        register_window.resize(491, 390)
+        register_window.resize(463, 390)
         self.centralwidget = QtWidgets.QWidget(register_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -59,7 +60,7 @@ class Ui_register_window(object):
         self.verticalLayout_2.addWidget(self.calendarWidget)
         register_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(register_window)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 491, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 463, 26))
         self.menubar.setObjectName("menubar")
         register_window.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(register_window)
@@ -73,7 +74,7 @@ class Ui_register_window(object):
         _translate = QtCore.QCoreApplication.translate
         register_window.setWindowTitle(_translate("register_window", "Register"))
         self.register_button_back.setText(_translate("register_window", "Back"))
-        self.label.setText(_translate("register_window", "Register Well-being"))
+        self.label.setText(_translate("register_window", "Register Wellbeing"))
 
 
 if __name__ == "__main__":

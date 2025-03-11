@@ -11,20 +11,34 @@ class Cloud_handler:
     __CREDENTIALS_PATH = os.path.join(__BASE_DIR, "firebase-credentials.json")  # Konstruera den fullständiga sökvägen.
     
     def __init__(self):
+
+        print("Constructing object of type cloud handler")
+
         __cred = credentials.Certificate(self.__CREDENTIALS_PATH)  # ✅ Nu kommer den alltid att hitta filen.
         
         firebase_admin.initialize_app(__cred)
         self.db = firestore.client()
 
     def add_data(self, user_id, entry_id, dictionary):
+        """Lägger till information i cloud"""
+
+        print("Adding data to cloud...")
+
         db_ref = self.db.collection(user_id).document(entry_id)
         db_ref.set(dictionary)
 
     def get_data(self, user_id, entry_id):
+        """Hämtar data från cloud"""
+
+        print("Retrieving data from cloud...")
+
         user_db_data = self.db.collection(user_id).document(entry_id).get()
         return user_db_data.to_dict()
     
     def add_user_entries(self, user_id, dictionary):
+        """Lägger till alla entries, i en dictionary, i cloud"""
+
+        print(f"Adding all entries in {dictionary} to cloud, under {user_id}")
             
         entry_id_list = self.get_data(user_id, "entry_id_list")
 
@@ -38,6 +52,11 @@ class Cloud_handler:
         self.add_data(user_id, "entry_id_list", entry_id_list)
 
     def get_user_entries(self, user_id):
+        """Hämtar alla entries i databasen kopplat till user_id, gör om det till ett user entry
+            och returnerar en lista med entries"""
+
+        print(f"Retrieving all entries associated with {user_id}")
+
         temp_dict = {}
         cloud_dict_keys = self.get_data(user_id, "entry_id_list")
         

@@ -19,35 +19,57 @@ class Menu_window(QMainWindow, Ui_menu_window):
 
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, notification_handler):
+
+        print("Constructing object of type menu window...")
+
         super(Menu_window, self).__init__() 
         self.setupUi(self)  # Funktion som finns i respektive Ui/Py fil, lägger till alla komponenter (knapp, text osv)
-        self.setupTimer() #Lägger till en timer i huvudmenyn
+        self.setupTimer(0) #Lägger till en timer i huvudmenyn
         self.setupButtons(qWidget, notification_handler)  # Funktion som kopplar knapparna, finns nedan
 
     #Funktion som skapar en timer och sedan startar den med en tid på 0 sekunder 
     #(Innebär att den skickar ut en signal direkt)
-    def setupTimer(self):
+    def setupTimer(self, time):
+        """Skapar en timer med start tid som 0 millisekunder"""
 
-        __TIME = 0
+        print("Creating and starting timer...")
+
+        __TIME = time
         
         self.__timer = QTimer()
         self.__timer.start(__TIME)
         
     def setupButtons(self, qWidget, notification_handler):
+
+        print("Connecting menu buttons...")
+
         self.menu_button_register.clicked.connect(lambda: self.menu_button_press_register(qWidget))
         self.menu_button_statistics.clicked.connect(lambda: self.menu_button_press_statistics(qWidget))
         self.__timer.timeout.connect(lambda: self.timer_timeout(notification_handler))
 
     def menu_button_press_register(self, qWidget):
+        """Byter fönster till kalender"""
+
+        print("Changing from menu window to calendar window")
+
         qWidget.setCurrentIndex(1)
 
     def menu_button_press_statistics(self, qWidget):
+        """Byter fönster till statistik"""
+
+        print("Changing from menu window to statistics window")
+
         qWidget.widget(2).rePlot()
         qWidget.setCurrentIndex(2)
     
     #När den specifierade tiden i timern tar slut så kallas den här funktionen, vilket visar en notifikation
     #med hjälp av Notification_handler
     def timer_timeout(self, notification_handler):
+        """Stannar timern och visar en notifikation
+            Notifikation beror på notifikations hanteraren"""
+        
+        print("Stopping timer...")
+
         self.__timer.stop() #Stoppar timern så att den inte körs igen
         notification_handler.show_notification() #Visar notifikation
 
@@ -59,26 +81,40 @@ class Menu_window(QMainWindow, Ui_menu_window):
         #self.__timer.star(__TIME)
         
 
-# Fönster för registrering, med kalender
+# Fönster för registrering, med kalender (aka Calendar window)
 class Register_window(QMainWindow, Ui_register_window):
     
     __data = None
     
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, data_handler, notification_handler):
+
+        print("Constructing object of type calendar window")
+
         super(Register_window, self).__init__()
-        self.setupUi(self, Calendar_widget(data_handler)) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
+        self.setupUi(self, Calendar_widget(data_handler.get_all_keys())) #Funktion som finns i Register.oy, lägger till alla komponenter (knapp, text osv)
         self.__data = data_handler
         self.setupButtons(qWidget, notification_handler)  # Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self, qWidget, notification_handler):
+
+        print("Connecting calendar buttons...")
+
         self.register_button_back.clicked.connect(lambda: self.register_menu_press_back(qWidget))
         self.calendarWidget.clicked.connect(lambda: self.register_calendar_widget_pressed(notification_handler))
 
     def register_menu_press_back(self, qWidget):
+        """Byter fönster till Menyn"""
+
+        print("Changing from calendar window to menu window...")
+
         qWidget.setCurrentIndex(0)
 
     def register_calendar_widget_pressed(self, notification_handler):
+        """Skapar och visar ett registrerings fönster med datument som klickades."""
+
+        print("Opening form...")
+
         date = self.calendarWidget.selectedDate()
         Registration_form = Registration_form_window(self.__data, date, notification_handler)
         Registration_form.setWindowTitle(Registration_form.windowTitle() + " - [" + date.toString("yyyy-MM-dd") + "]")
@@ -86,7 +122,7 @@ class Register_window(QMainWindow, Ui_register_window):
 
 
 
-#Fönster för registrering, med frågor och anteckningar
+#Fönster för registrering, med frågor och anteckningar (aka Form window)
 class Registration_form_window(QDialog, Ui_registration_form):
     
     __data = None
@@ -94,6 +130,9 @@ class Registration_form_window(QDialog, Ui_registration_form):
 
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, data_handler, date, notification_handler):
+
+        print("Constructing object of type form window...")
+
         super(Registration_form_window, self).__init__()
         self.setupUi(self)  # Funktion som finns i Registration_form.py, lägger till alla komponenter (knapp, text osv)
         self.__data = data_handler
@@ -103,11 +142,17 @@ class Registration_form_window(QDialog, Ui_registration_form):
         self.setupButtons(notification_handler) #Funktion som kopplar knapparna, finns nedan
     
     def setupButtons(self, notification_handler):
+        print("Connecting form buttons...")
         self.registration_form_button_save.clicked.connect(lambda: self.registration_form_button_press_save(notification_handler))
 
     def try_load_entry_data(self):
+        """Kollar efter en nyckel i data_hanteraren som passar det datumet användaren klickat.
+            Isåfall representeras den data som sparats tidigare."""
+        
+        print("Looking for previous entry...")
+
         if self.__date in self.__data.get_all_keys():
-            print("Previous entry found")
+            print("Previous entry found...")
 
             user_entry = self.__data.get_from_dict(self.__date)
 
@@ -123,25 +168,30 @@ class Registration_form_window(QDialog, Ui_registration_form):
             if meals != None:
                 meals.setChecked(True)
 
-            connected_boolean = self.Registration_form_family_buttons.button(-abs(user_entry.get_connected_boolean())-1)
-            if connected_boolean != None:
-                connected_boolean.setChecked(True)
+            if user_entry.get_connected_boolean():
+                self.Registration_form_family_buttons.button(-2).setChecked(True)
+            else:
+                self.Registration_form_family_buttons.button(-3).setChecked(True)
 
-            rest_boolean = self.Registration_form_rest_buttons.button(-abs(user_entry.get_rest_boolean())-1)
-            if  rest_boolean != None:
-                 rest_boolean.setChecked(True)
+            if user_entry.get_rest_boolean():
+                self.Registration_form_rest_buttons.button(-2).setChecked(True)
+            else:
+                self.Registration_form_rest_buttons.button(-3).setChecked(True)
 
-            exercise_boolean = self.Registration_form_exercise_buttons.button(-abs(user_entry.get_exercise_boolean())-1)
-            if exercise_boolean != None:
-                exercise_boolean.setChecked(True)
+            if user_entry.get_exercise_boolean():
+                self.Registration_form_exercise_buttons.button(-2).setChecked(True)
+            else:
+                self.Registration_form_exercise_buttons.button(-3).setChecked(True)
 
-            alcohol_boolean = self.Registration_form_alcohol_buttons.button(-abs(user_entry.get_alcohol_boolean())-1)
-            if alcohol_boolean != None:
-                alcohol_boolean.setChecked(True)
+            if user_entry.get_alcohol_boolean():
+                self.Registration_form_alcohol_buttons.button(-2).setChecked(True)
+            else:
+                self.Registration_form_alcohol_buttons.button(-3).setChecked(True)
 
-            drug_boolean = self.Registration_form_drugs_buttons.button(-abs(user_entry.get_drug_boolean())-1)
-            if drug_boolean != None:
-                drug_boolean.setChecked(True)
+            if user_entry.get_drug_boolean():
+                self.Registration_form_drugs_buttons.button(-2).setChecked(True)
+            else:
+                self.Registration_form_drugs_buttons.button(-3).setChecked(True)
 
             self.registration_form_notepad.setPlainText(user_entry.get_notes())
 
@@ -149,8 +199,12 @@ class Registration_form_window(QDialog, Ui_registration_form):
            
 
     def registration_form_button_press_save(self, notification_handler):
+        """Sparar värdet av alla knappar, skapar ett user_entry objekt med de värdena
+            och lägger till det i data_hanteraren. Med datum som nycklen.
+            Visar en notifikation sist av allt."""
         
-        #TODO - Kod för att spara information härr
+        print("Saving information from form window...")
+        
         wellbeing = abs(self.Registration_form_feeling_buttons.checkedId())-1
         anxiety = abs(self.Registration_form_anxiety_buttons.checkedId())-1
         meals = abs(self.Registration_form_meals_buttons.checkedId())-1
@@ -175,6 +229,9 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
 
     # Konstruktören, detta körs när ett nytt objekt initieras
     def __init__(self, qWidget, algorithm_handler): 
+
+        print("Constructing object of type statistics window...")
+
         super(Statistics_window, self).__init__()
 
         self.__algorithm_handler = algorithm_handler
@@ -190,9 +247,16 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan
 
     def setupButtons(self, qWidget):
+
+        print("Connecting statistics buttons...")
+
         self.statistics_button_back.clicked.connect(lambda: self.statistics_button_press_back(qWidget))
 
     def graphSetup(self, title, yVal):
+
+        print("Building graph...")
+
+        """Skapar en graf med specifierat utseende"""
         graph = pg.PlotWidget()
         graph.setBackground((255,255,255,0))
         graph.setTitle(title)
@@ -205,11 +269,24 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
 
 
     def rePlot(self):
+        """Rensar all graf fönster och plottar sedan med ny information, 
+            beroende på information från algoritm hanterare."""
+        
+
         POINT_SYMBOl = "o"
         POINT_SYMBOl_COLOR = "k"
         POINT_SYMBOl_SIZE = 5
         LINE_COLOR = (255,0,0)
         pen = pg.mkPen(color=LINE_COLOR)
+
+        print("Clearing graphs...")
+
+        self.graph_1.clear()
+        self.graph_2.clear()
+        self.graph_3.clear()
+        self.graph_4.clear()
+
+        print("Plotting new graphs...")
 
         days = self.__algorithm_handler.entry_amount()
 
@@ -229,4 +306,8 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
         
 
     def statistics_button_press_back(self, qWidget):
+        """Byter fönster till menyn"""
+
+        print("Changing from statistics window to menu window...")
+
         qWidget.setCurrentIndex(0)

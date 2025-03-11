@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\Liinn\Agile-Development-Project-2025\Registration_form_prototype.ui'
+# Form implementation generated from reading ui file 'Registration_form_prototype.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -863,3 +863,13 @@ class Ui_registration_form(object):
         self.registration_form_button_cancel.setText(_translate("registration_form", "Cancel"))
         self.register_notes_label.setText(_translate("registration_form", "Notes"))
         self.registration_form_notepad.setPlaceholderText(_translate("registration_form", "Write your notes here: "))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    registration_form = QtWidgets.QDialog()
+    ui = Ui_registration_form()
+    ui.setupUi(registration_form)
+    registration_form.show()
+    sys.exit(app.exec_())
