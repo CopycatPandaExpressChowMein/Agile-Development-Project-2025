@@ -31,7 +31,7 @@ class Data_handler:
     def add_to_dict(self, key, value):
         """ Lägger till ett nytt värde i dictionary och sparar det. """
 
-        print(f"Adding {key} and {value} to dictionary...")
+        print(f"Adding {key} and associated value to dictionary...")
 
         self.__data_dictionary[key] = value
         save_bin_file(self.__data_dictionary, self.FILENAME+".bin", self.SAVEPATH)  # Spara efter ändring

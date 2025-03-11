@@ -238,10 +238,10 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
 
         graphs = []
         
-        graphs.append(self.graphSetup("Wellbeing vs Time", "Wellbeing"))
-        graphs.append(self.graphSetup("Anxiety vs Time", "Anxiety"))
-        graphs.append(self.graphSetup("Meals vs Time", "Meals"))
-        graphs.append(self.graphSetup("Average mental health vs Time", "Average"))
+        graphs.append(self.graphSetup("Wellbeing over Time", "Wellbeing"))
+        graphs.append(self.graphSetup("Anxiety over Time", "Anxiety"))
+        graphs.append(self.graphSetup("Meals over Time", "Meals"))
+        graphs.append(self.graphSetup("Average mental health over Time", "Average"))
 
         self.setupUi(self, graphs)  # Funktion som finns i Statistics.py, lägger till alla komponenter (knapp, text osv)
         self.setupButtons(qWidget)  # Funktion som kopplar knapparna, finns nedan

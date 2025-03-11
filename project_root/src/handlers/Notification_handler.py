@@ -20,7 +20,7 @@ class Notification_handler:
 
     def __init__(self, Algorithm_handler):
         
-        print("Constructs an object of type algorithm handler...")
+        print("Constructing an object of type notification handler...")
 
         self.__algorithm_handler = Algorithm_handler
 
