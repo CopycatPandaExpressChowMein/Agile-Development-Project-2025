@@ -23,7 +23,7 @@
          <widget class="QPushButton" name="statistics_button_back">
           <property name="font">
            <font>
-            <family>Segoe UI Variable Display Semib</family>
+            <family>Book Antiqua</family>
             <pointsize>10</pointsize>
             <weight>75</weight>
             <bold>true</bold>
@@ -100,8 +100,10 @@
            <widget class="QLabel" name="statistics_label">
             <property name="font">
              <font>
-              <family>Segoe UI Variable Display Semib</family>
+              <family>Book Antiqua</family>
               <pointsize>40</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
