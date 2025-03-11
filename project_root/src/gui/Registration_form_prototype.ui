@@ -18,6 +18,9 @@
   <property name="windowTitle">
    <string>Registration form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(209,233,246)</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_14">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_16">
@@ -116,6 +119,9 @@
        </item>
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(209,233,246)</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -127,7 +133,7 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>240</width>
+            <width>239</width>
             <height>494</height>
            </rect>
           </property>
@@ -2060,6 +2066,9 @@
                <bold>true</bold>
               </font>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(174,226,255)</string>
+             </property>
              <property name="text">
               <string>Save</string>
              </property>
@@ -2086,6 +2095,9 @@
                <weight>75</weight>
                <bold>true</bold>
               </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color:rgb(174,226,255)</string>
              </property>
              <property name="text">
               <string>Cancel</string>
@@ -2198,6 +2210,9 @@
          </item>
          <item>
           <widget class="QPlainTextEdit" name="registration_form_notepad">
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(255, 255, 255)</string>
+           </property>
            <property name="plainText">
             <string/>
            </property>
