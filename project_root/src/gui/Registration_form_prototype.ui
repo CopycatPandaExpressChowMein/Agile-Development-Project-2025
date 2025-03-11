@@ -128,6 +128,9 @@
        </item>
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(209,233,246)</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -139,8 +142,18 @@
            <rect>
             <x>0</x>
             <y>0</y>
+<<<<<<< HEAD
             <width>452</width>
             <height>656</height>
+=======
+<<<<<<< HEAD
+            <width>239</width>
+            <height>494</height>
+=======
+            <width>403</width>
+            <height>605</height>
+>>>>>>> 1c52f592d694c4d22ced2183c8bab87869c88e9d
+>>>>>>> 5cc15ffae025adcaef6e1bbbe77976a9fdfa9214
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -2080,6 +2093,7 @@
               </font>
              </property>
              <property name="styleSheet">
+<<<<<<< HEAD
               <string notr="true">QPushButton{
 background-color: rgb(174, 226, 255);
 color: rgb(255, 255, 255);
@@ -2097,6 +2111,9 @@ border-bottom: 2px solid;
 border-top: 6px solid;
 border-color: rgb(255, 255, 255)
 }</string>
+=======
+              <string notr="true">background-color:rgb(174,226,255)</string>
+>>>>>>> 5cc15ffae025adcaef6e1bbbe77976a9fdfa9214
              </property>
              <property name="text">
               <string>Save</string>
@@ -2133,6 +2150,7 @@ border-color: rgb(255, 255, 255)
               </font>
              </property>
              <property name="styleSheet">
+<<<<<<< HEAD
               <string notr="true">QPushButton{
 background-color: rgb(174, 226, 255);
 color: rgb(255, 255, 255);
@@ -2150,6 +2168,9 @@ border-bottom: 2px solid;
 border-top: 6px solid;
 border-color: rgb(255, 255, 255)
 }</string>
+=======
+              <string notr="true">background-color:rgb(174,226,255)</string>
+>>>>>>> 5cc15ffae025adcaef6e1bbbe77976a9fdfa9214
              </property>
              <property name="text">
               <string>Cancel</string>
@@ -2263,7 +2284,11 @@ border-color: rgb(255, 255, 255)
          <item>
           <widget class="QPlainTextEdit" name="registration_form_notepad">
            <property name="styleSheet">
+<<<<<<< HEAD
             <string notr="true">background-color: rgb(255, 255, 255)</string>
+=======
+            <string notr="true">background-color:rgb(255, 255, 255)</string>
+>>>>>>> 5cc15ffae025adcaef6e1bbbe77976a9fdfa9214
            </property>
            <property name="plainText">
             <string/>
