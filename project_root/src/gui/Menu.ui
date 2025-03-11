@@ -21,6 +21,9 @@
   <property name="windowTitle">
    <string>HabitTrack</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(209, 233, 246)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
@@ -131,6 +134,9 @@
               <bold>true</bold>
              </font>
             </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255)</string>
+            </property>
             <property name="text">
              <string>HabitTrack</string>
             </property>
@@ -220,6 +226,25 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: rgb(174, 226, 255);
+color: rgb(255, 255, 255);
+border-radius: 10px;
+border-style: solid;
+border-width: 3px;
+border-bottom: 6px solid;
+border-top: 2px solid;
+border-color: rgb(255, 255, 255)
+}
+
+QPushButton:Pressed{
+background-color: rgb(209, 233, 246);
+border-bottom: 2px solid;
+border-top: 6px solid;
+border-color: rgb(255, 255, 255)
+}</string>
+          </property>
           <property name="text">
            <string>Register</string>
           </property>
@@ -254,8 +279,33 @@
             <bold>true</bold>
            </font>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: rgb(174, 226, 255);
+color: rgb(255, 255, 255);
+border-radius: 10px;
+border-style: solid;
+border-width: 3px;
+border-bottom: 6px solid;
+border-top: 2px solid;
+border-color: rgb(255, 255, 255)
+}
+
+QPushButton:Pressed{
+background-color: rgb(209, 233, 246);
+border-bottom: 2px solid;
+border-top: 6px solid;
+border-color: rgb(255, 255, 255)
+}</string>
+          </property>
           <property name="text">
            <string>Statistics</string>
+          </property>
+          <property name="default">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -297,7 +347,7 @@
      <x>0</x>
      <y>0</y>
      <width>1315</width>
-     <height>9</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
