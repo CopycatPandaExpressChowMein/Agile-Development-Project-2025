@@ -15,7 +15,7 @@ class Calendar_widget (QCalendarWidget):
 
         if date in self.__keys:
             painter.save()
-            painter.setBrush(QBrush(QColor(0,200,0)))
+            painter.setBrush(QBrush(QColor(174,226,255)))
             painter.drawEllipse(rect.topLeft() + QPoint(12, 12), 6, 6)
             painter.restore()
 

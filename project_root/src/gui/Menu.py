@@ -19,6 +19,7 @@ class Ui_menu_window(object):
         font.setPointSize(1)
         menu_window.setFont(font)
         menu_window.setMouseTracking(False)
+        menu_window.setStyleSheet("background-color: rgb(209, 233, 246)")
         self.centralwidget = QtWidgets.QWidget(menu_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -57,6 +58,7 @@ class Ui_menu_window(object):
         font.setItalic(False)
         font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(255, 255, 255)")
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
         spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -83,6 +85,23 @@ class Ui_menu_window(object):
         font.setWeight(75)
         self.menu_button_register.setFont(font)
         self.menu_button_register.setAutoFillBackground(False)
+        self.menu_button_register.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
         self.menu_button_register.setObjectName("menu_button_register")
         self.horizontalLayout_2.addWidget(self.menu_button_register)
         spacerItem9 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -95,6 +114,25 @@ class Ui_menu_window(object):
         font.setBold(True)
         font.setWeight(75)
         self.menu_button_statistics.setFont(font)
+        self.menu_button_statistics.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
+        self.menu_button_statistics.setDefault(False)
+        self.menu_button_statistics.setFlat(False)
         self.menu_button_statistics.setObjectName("menu_button_statistics")
         self.horizontalLayout_2.addWidget(self.menu_button_statistics)
         self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
@@ -105,7 +143,7 @@ class Ui_menu_window(object):
         self.verticalLayout_2.addItem(spacerItem11)
         menu_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(menu_window)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1315, 9))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1315, 26))
         self.menubar.setObjectName("menubar")
         menu_window.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(menu_window)

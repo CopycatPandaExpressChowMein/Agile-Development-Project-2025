@@ -14,11 +14,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_registration_form(object):
     def setupUi(self, registration_form):
         registration_form.setObjectName("registration_form")
-        registration_form.resize(700, 600)
+        registration_form.resize(779, 825)
         registration_form.setMinimumSize(QtCore.QSize(700, 600))
         font = QtGui.QFont()
         font.setPointSize(8)
         registration_form.setFont(font)
+        registration_form.setStyleSheet("background-color: rgb(209, 233, 246)")
         self.verticalLayout_14 = QtWidgets.QVBoxLayout(registration_form)
         self.verticalLayout_14.setObjectName("verticalLayout_14")
         self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
@@ -32,6 +33,7 @@ class Ui_registration_form(object):
         font.setBold(True)
         font.setWeight(75)
         self.registration_form_date_label.setFont(font)
+        self.registration_form_date_label.setStyleSheet("color: rgb(255, 255, 255)")
         self.registration_form_date_label.setObjectName("registration_form_date_label")
         self.horizontalLayout_16.addWidget(self.registration_form_date_label)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -63,7 +65,7 @@ class Ui_registration_form(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 403, 605))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 452, 656))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
@@ -837,23 +839,59 @@ class Ui_registration_form(object):
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.registration_form_button_save = QtWidgets.QPushButton(registration_form)
+        self.registration_form_button_save.setMinimumSize(QtCore.QSize(100, 50))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         font.setPointSize(8)
         font.setBold(True)
         font.setWeight(75)
         self.registration_form_button_save.setFont(font)
+        self.registration_form_button_save.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
         self.registration_form_button_save.setObjectName("registration_form_button_save")
         self.horizontalLayout_8.addWidget(self.registration_form_button_save)
         spacerItem66 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem66)
         self.registration_form_button_cancel = QtWidgets.QPushButton(registration_form)
+        self.registration_form_button_cancel.setMinimumSize(QtCore.QSize(100, 50))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         font.setPointSize(8)
         font.setBold(True)
         font.setWeight(75)
         self.registration_form_button_cancel.setFont(font)
+        self.registration_form_button_cancel.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
         self.registration_form_button_cancel.setObjectName("registration_form_button_cancel")
         self.horizontalLayout_8.addWidget(self.registration_form_button_cancel)
         self.horizontalLayout_9.addLayout(self.horizontalLayout_8)
@@ -903,6 +941,7 @@ class Ui_registration_form(object):
         self.verticalLayout_17.addLayout(self.horizontalLayout_26)
         self.verticalLayout_4.addLayout(self.verticalLayout_17)
         self.registration_form_notepad = QtWidgets.QPlainTextEdit(registration_form)
+        self.registration_form_notepad.setStyleSheet("background-color: rgb(255, 255, 255)")
         self.registration_form_notepad.setPlainText("")
         self.registration_form_notepad.setObjectName("registration_form_notepad")
         self.verticalLayout_4.addWidget(self.registration_form_notepad)

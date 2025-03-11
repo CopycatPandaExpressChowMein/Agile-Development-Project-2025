@@ -274,10 +274,10 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
         
 
         POINT_SYMBOl = "o"
-        POINT_SYMBOl_COLOR = "k"
-        POINT_SYMBOl_SIZE = 5
-        LINE_COLOR = (255,0,0)
-        pen = pg.mkPen(color=LINE_COLOR)
+        POINT_SYMBOl_COLOR = "w"
+        POINT_SYMBOl_SIZE = 7
+        LINE_COLOR = (174,226,255)
+        pen = pg.mkPen(color=LINE_COLOR, width=3)
 
         print("Clearing graphs...")
 
