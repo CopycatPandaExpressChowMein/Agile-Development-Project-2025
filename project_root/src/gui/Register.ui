@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>491</width>
+    <width>521</width>
     <height>390</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
          <widget class="QPushButton" name="register_button_back">
           <property name="font">
            <font>
-            <family>Segoe UI Variable Display Semib</family>
+            <family>Book Antiqua</family>
             <weight>75</weight>
             <bold>true</bold>
            </font>
@@ -67,7 +67,7 @@
          <widget class="QLabel" name="label">
           <property name="font">
            <font>
-            <family>Segoe UI Variable Display Semib</family>
+            <family>Book Antiqua</family>
             <pointsize>15</pointsize>
             <weight>75</weight>
             <italic>false</italic>
@@ -107,8 +107,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>491</width>
-     <height>26</height>
+     <width>521</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>
