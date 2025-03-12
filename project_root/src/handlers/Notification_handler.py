@@ -51,9 +51,9 @@ class Notification_handler:
         Wellbeing = self.__algorithm_handler.average_statistics()
         list_length = len(Wellbeing)-1
 
-        if Wellbeing[list_length] > 1:
+        if Wellbeing[list_length] < 2.5:
             notification_text += self.__Encouraging_MESSAGES[self.random_number()]
-        elif Wellbeing[list_length] == 1:
+        elif Wellbeing[list_length] == 2.5:
             notification_text += self.__Encouraging_MESSAGES[self.random_number()]
             notification_text += "\nDon't hesitate to talk to a friend if you need to"
         else:

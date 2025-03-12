@@ -6,7 +6,6 @@ from src.handlers.Cloud_handler import Cloud_handler
 from src.handlers.Algorithm_handler import Algorithm_handler
 from src.handlers.Notification_handler import Notification_handler
 from src.handlers.Network_handler import *
-from src.security.security import check_access  # 🔐 Importera säkerhetsfunktionen
 
 # 🏃‍♂️ Funktion som startar programmet
 def Runtime():
@@ -36,11 +35,6 @@ def Runtime():
     widget.addWidget(register)
     widget.addWidget(statistics)
     
-    # 🛡️ Säkerhetskontroll: Förhindra obehörig åtkomst 🛡️
-    user_role = "user"  # Detta kan ändras beroende på inloggning
-    if not check_access(user_role, "read"):  
-        print("❌ Åtkomst nekad!")
-        return  # Stoppa programmet om användaren saknar behörighet
 
     widget.resize(600, 500) # Förminskar storleken på fönstret innan det körs.
     widget.show()  # Visa huvudfönstret
