@@ -14,10 +14,14 @@ class Cloud_handler:
 
         print("Constructing object of type cloud handler")
         
-        __cred = credentials.Certificate(self.__CREDENTIALS_PATH)  # ✅ Nu kommer den alltid att hitta filen.
-        
-        firebase_admin.initialize_app(__cred)
-        self.db = firestore.client()
+        try:
+            __cred = credentials.Certificate(self.__CREDENTIALS_PATH)  # ✅ Nu kommer den alltid att hitta filen.
+            
+            firebase_admin.initialize_app(__cred)
+            self.db = firestore.client()
+        except:
+            print("Cloud connection error, missing credentials...")
+    
 
     def add_data(self, user_id, entry_id, dictionary):
         """Lägger till information i cloud"""
