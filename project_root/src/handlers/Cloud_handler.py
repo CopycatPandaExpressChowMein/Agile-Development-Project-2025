@@ -13,7 +13,7 @@ class Cloud_handler:
     def __init__(self):
 
         print("Constructing object of type cloud handler")
-
+        
         __cred = credentials.Certificate(self.__CREDENTIALS_PATH)  # ✅ Nu kommer den alltid att hitta filen.
         
         firebase_admin.initialize_app(__cred)

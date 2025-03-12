@@ -15,6 +15,7 @@ class Ui_statistics_window(object):
     def setupUi(self, statistics_window, graphs):
         statistics_window.setObjectName("statistics_window")
         statistics_window.resize(803, 828)
+        statistics_window.setStyleSheet("background-color: rgb(209, 233, 246)")
         self.centralwidget = QtWidgets.QWidget(statistics_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -24,12 +25,30 @@ class Ui_statistics_window(object):
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.statistics_button_back = QtWidgets.QPushButton(self.centralwidget)
+        self.statistics_button_back.setMinimumSize(QtCore.QSize(100, 50))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.statistics_button_back.setFont(font)
+        self.statistics_button_back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
         self.statistics_button_back.setObjectName("statistics_button_back")
         self.horizontalLayout.addWidget(self.statistics_button_back)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -55,6 +74,7 @@ class Ui_statistics_window(object):
         font.setBold(True)
         font.setWeight(75)
         self.statistics_label.setFont(font)
+        self.statistics_label.setStyleSheet("color: rgb(255, 255, 255)")
         self.statistics_label.setWordWrap(False)
         self.statistics_label.setObjectName("statistics_label")
         self.horizontalLayout_2.addWidget(self.statistics_label)

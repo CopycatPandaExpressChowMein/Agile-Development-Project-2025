@@ -15,6 +15,7 @@ class Ui_register_window(object):
     def setupUi(self, register_window, calendar_widget):
         register_window.setObjectName("register_window")
         register_window.resize(521, 390)
+        register_window.setStyleSheet("background-color: rgb(209, 233, 246)")
         self.centralwidget = QtWidgets.QWidget(register_window)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -24,11 +25,29 @@ class Ui_register_window(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.register_button_back = QtWidgets.QPushButton(self.centralwidget)
+        self.register_button_back.setMinimumSize(QtCore.QSize(80, 40))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         font.setBold(True)
         font.setWeight(75)
         self.register_button_back.setFont(font)
+        self.register_button_back.setStyleSheet("QPushButton{\n"
+"background-color: rgb(174, 226, 255);\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius: 10px;\n"
+"border-style: solid;\n"
+"border-width: 3px;\n"
+"border-bottom: 6px solid;\n"
+"border-top: 2px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:Pressed{\n"
+"background-color: rgb(209, 233, 246);\n"
+"border-bottom: 2px solid;\n"
+"border-top: 6px solid;\n"
+"border-color: rgb(255, 255, 255)\n"
+"}")
         self.register_button_back.setObjectName("register_button_back")
         self.horizontalLayout_2.addWidget(self.register_button_back)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -47,6 +66,7 @@ class Ui_register_window(object):
         font.setUnderline(False)
         font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(255, 255, 255)")
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -58,7 +78,7 @@ class Ui_register_window(object):
         self.verticalLayout_2.addWidget(self.calendarWidget)
         register_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(register_window)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 521, 18))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 521, 26))
         self.menubar.setObjectName("menubar")
         register_window.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(register_window)

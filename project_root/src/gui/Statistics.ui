@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Statistics</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(209, 233, 246)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
@@ -21,6 +24,12 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QPushButton" name="statistics_button_back">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="font">
            <font>
             <family>Book Antiqua</family>
@@ -28,6 +37,25 @@
             <weight>75</weight>
             <bold>true</bold>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: rgb(174, 226, 255);
+color: rgb(255, 255, 255);
+border-radius: 10px;
+border-style: solid;
+border-width: 3px;
+border-bottom: 6px solid;
+border-top: 2px solid;
+border-color: rgb(255, 255, 255)
+}
+
+QPushButton:Pressed{
+background-color: rgb(209, 233, 246);
+border-bottom: 2px solid;
+border-top: 6px solid;
+border-color: rgb(255, 255, 255)
+}</string>
           </property>
           <property name="text">
            <string>Back</string>
@@ -105,6 +133,9 @@
               <weight>75</weight>
               <bold>true</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255)</string>
             </property>
             <property name="text">
              <string>Statistics</string>
