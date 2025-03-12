@@ -37,7 +37,7 @@ class Ui_menu_window(object):
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_4.addItem(spacerItem2)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setMaximumSize(QtCore.QSize(500, 360))
+        self.label_2.setMaximumSize(QtCore.QSize(360, 360))
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap("src/gui/resources/Logo_HabitTrack_NoText.png"))
         self.label_2.setScaledContents(True)
