@@ -238,7 +238,7 @@ class Statistics_window(QMainWindow, Ui_statistics_window):
 
         graphs = []
         
-        graphs.append(self.graphSetup("Wellbeing over Time", "Wellbeing"))
+        graphs.append(self.graphSetup("Well-being over Time", "Wellbeing"))
         graphs.append(self.graphSetup("Anxiety over Time", "Anxiety"))
         graphs.append(self.graphSetup("Meals over Time", "Meals"))
         graphs.append(self.graphSetup("Average mental health over Time", "Average"))
