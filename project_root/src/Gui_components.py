@@ -50,14 +50,14 @@ class Menu_window(QMainWindow, Ui_menu_window):
     def menu_button_press_register(self, qWidget):
         """Byter fönster till kalender"""
 
-        print("Changing from menu window to calendar window")
+        print("Changing from menu window to calendar window...")
 
         qWidget.setCurrentIndex(1)
 
     def menu_button_press_statistics(self, qWidget):
         """Byter fönster till statistik"""
 
-        print("Changing from menu window to statistics window")
+        print("Changing from menu window to statistics window...")
 
         qWidget.widget(2).rePlot()
         qWidget.setCurrentIndex(2)

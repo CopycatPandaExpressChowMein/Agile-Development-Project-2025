@@ -29,7 +29,7 @@ class Notification_handler:
         """Visar en notifikation, försöker generera text, ifall det inte går så 
             används en förbestämd text."""
 
-        print("Visar notifikation...")
+        print("Showing notification...")
 
         try:
             __NOTIFICATION_TEXT, __NOTIFICATION_STYLE = self.get_notification_content()
